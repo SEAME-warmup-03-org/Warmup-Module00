@@ -45,11 +45,16 @@ int main(
     int     arc,
     char**  arv
 ) {
-    int     flg;
+    if (arc < 3)
+        exit(0);
 
     SimpleString simple =
         SimpleString(
-            string(arv[1]).compare("up"),
+            (string(arv[1]).compare("up") == 0 ?
+                0 :
+                (string(arv[1]).compare("down") == 0 ?
+                    -1 :
+                    -42)),
             arc,
             arv
         );
