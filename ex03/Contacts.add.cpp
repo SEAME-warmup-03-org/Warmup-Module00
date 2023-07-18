@@ -101,7 +101,7 @@ int         Contacts::add(void)
         if (bookmark.compare("/exit") == 0)
             is_exit = true;
         else if (bookmark.compare("y") == 0)
-            _content.setBookmark(true);
+            _content.setBookmark(!_content.getBookmark());
         break;
     }
 
